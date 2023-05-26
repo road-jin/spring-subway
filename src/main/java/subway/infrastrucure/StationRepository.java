@@ -13,12 +13,12 @@ import javax.sql.DataSource;
 import java.util.List;
 
 @Repository
-public class StationDao {
+public class StationRepository {
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
     private final SimpleJdbcInsert jdbcInsert;
 
-    public StationDao(DataSource dataSource) {
+    public StationRepository(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         this.jdbcInsert = new SimpleJdbcInsert(dataSource)
                 .withTableName("station")

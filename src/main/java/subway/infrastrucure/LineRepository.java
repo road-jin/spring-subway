@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 import subway.domain.Line;
 
 @Repository
-public class LineDao {
+public class LineRepository {
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
     private final SimpleJdbcInsert jdbcInsert;
 
-    public LineDao(DataSource dataSource) {
+    public LineRepository(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         this.jdbcInsert = new SimpleJdbcInsert(dataSource)
                 .withTableName("line")

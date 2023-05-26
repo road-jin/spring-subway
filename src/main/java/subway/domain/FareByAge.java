@@ -26,7 +26,7 @@ public enum FareByAge {
     public static FareByAge valueOf(int age) {
         return Arrays.stream(values())
             .filter(fareByAge -> fareByAge.ageMatch.test(age))
-            .findFirst()
+            .findAny()
             .orElse(FREE);
     }
 

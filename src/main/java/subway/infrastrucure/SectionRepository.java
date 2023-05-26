@@ -13,12 +13,12 @@ import subway.domain.Section;
 import subway.domain.Station;
 
 @Repository
-public class SectionDao {
+public class SectionRepository {
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
     private final SimpleJdbcInsert jdbcInsert;
 
-    public SectionDao(DataSource dataSource) {
+    public SectionRepository(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         this.jdbcInsert = new SimpleJdbcInsert(dataSource)
             .withTableName("section")
